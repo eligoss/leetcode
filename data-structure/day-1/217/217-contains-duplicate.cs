@@ -14,17 +14,22 @@
  */
 function containsDuplicate(nums: number[]): boolean {
 
+        // 1. Define the hashset
         //Dictionary is faster then hashSet in c#
         var hashSet = new Dictionary<int, int>();
 
+        // 2. Loop over the nums
         for(int i = 0; i < nums.Length; i++)
         {
+            // 3. If the hashset contains the nums[i] -> return true
+            // 4. Add nums[i] to hashset
             if(!hashSet.TryAdd(nums[i], 1))
             {
                 return true;
             }
         }
 
+        // 5. Return false;
         return false;
     }
 }

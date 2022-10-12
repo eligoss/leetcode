@@ -13,11 +13,14 @@
 public class Solution {
     public int[] RunningSum(int[] nums) {
 
+        // 1. Loop over the nums
         for(int i = 1; i < nums.Length; i++)
         {
+            // 2. Add to nums[i] previous element
             nums[i] += nums[i - 1];
         }
 
+        // 3. return nums
         return nums;
     }
 }

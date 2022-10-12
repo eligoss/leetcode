@@ -14,15 +14,21 @@
  */
 function containsDuplicate(nums: number[]): boolean {
 
+    // 1. Define the hashset
     let dictionary = new Set<number>();
 
+    // 2. Loop over the nums
     for (let i = 0; i < nums.length; i++) {
+
+        // 3. If the hashset contains the nums[i] -> return true
         if (dictionary.has(nums[i])) {
             return true;
         }
 
+        // 4. Add nums[i] to hashset
         dictionary.add(nums[i]);
     }
 
+    // 5. Return false;
     return false;
 }
