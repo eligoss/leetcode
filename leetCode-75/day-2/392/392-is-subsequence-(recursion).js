@@ -17,25 +17,32 @@
  */
 var isSubsequence = function(s, t) {
 
+
     function CheckSubsequence(sIndex, tIndex) {
 
-        // If the s index is finished we have found the full match.
-        if(sIndex < 0) {
+        // 2. If the s index equals to the end of the s string, have found the full match, exit from recursion.
+        if(sIndex == s.length) {
             return true;
         }
-        // If the t index is finished we have not found the full match.
-        if(tIndex < 0) {
+        // 3. If the t index equals to the end of the t string, have NOT found match, exit from recursion.
+        if(tIndex == t.length) {
             return false;
         }
 
-        // If the char math is found try to find next match
+        // 4. If sIndex char is found in t string
         if(s[sIndex] == t[tIndex]) {
-            return CheckSubsequence(sIndex -1, tIndex-1);
+
+            // 5. Increment sIndex
+            sIndex++;
         }
 
-        return CheckSubsequence(sIndex, tIndex-1);
+        // 6. Increment tIndex+
+        tIndex++;
+
+        // 7. Call recursion of the next elements.
+        return CheckSubsequence(sIndex, tIndex);
     }
 
-    // Start from the end of the string
-    return CheckSubsequence(s.length -1, t.length -1);
-}
+    // 1. Start Recurrsion from the beginning of the both strings.
+    return CheckSubsequence(0, 0);
+};
