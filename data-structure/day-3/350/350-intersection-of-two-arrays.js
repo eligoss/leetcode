@@ -2,6 +2,7 @@
  * Runtime:   ms 66 ms
  * Memory Usage: 43.4 MB
  * Link: https://leetcode.com/problems/intersection-of-two-arrays-ii/submissions/822656715/
+ * Solutions: https://leetcode.com/problems/intersection-of-two-arrays-ii/solutions/2704304/javascript-hashmap-pure-and-clean/
  * //-----------------------------------------------------------------------------
  *    1. Define hash map
  *    2. Loop over the first array
