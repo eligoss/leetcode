@@ -2,6 +2,7 @@
  * Runtime: 73  ms
  * Memory Usage: 41.7 MB
  * Link: https://leetcode.com/problems/is-subsequence/submissions/823267304/
+ * Solution Link: https://leetcode.com/problems/is-subsequence/solutions/2707591/javascript-2-solutions-recursion-and-twopointers/
  //-----------------------------------------------------------------------------
  1. Define s and t pointers
  2. While loop both pointers haven't reached the end of the string

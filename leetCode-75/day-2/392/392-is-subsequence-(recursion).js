@@ -2,6 +2,7 @@
  * Runtime: 64  ms
  * Memory Usage: 42.6 MB
  * Link: https://leetcode.com/problems/is-subsequence/submissions/823270282/
+ * Solution Link: https://leetcode.com/problems/is-subsequence/solutions/2707591/javascript-2-solutions-recursion-and-twopointers/
  //-----------------------------------------------------------------------------
  1. Start Recurrsion from the beginning of the both strings.
  2.     If the s index equals to the end of the s string, have found the full match, exit from recursion.
@@ -16,7 +17,6 @@
  * @return {boolean}
  */
 var isSubsequence = function(s, t) {
-
 
     function CheckSubsequence(sIndex, tIndex) {
 
