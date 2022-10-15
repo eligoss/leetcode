@@ -2,6 +2,19 @@
  * Runtime: 83 ms
  * Memory Usage: 41.1 MB
  * Link: https://leetcode.com/submissions/detail/750755164/
+ *  //-----------------------------------------------------------------------------
+ *     1. Set the hash map
+ *     2. Loop over the nums
+ *     3. Get the target minus the current
+ *     4.    If such record is found in hashmap return the current index and the found one
+ *     5.    Add the current element to the map.
+ *     6. Return empty array;
+ * //-----------------------------------------------------------------------------
+ /**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
 
