@@ -1,29 +1,47 @@
 /**
- * Runtime: 119 ms
- * Memory Usage: 52 MB
- * Link: https://leetcode.com/submissions/detail/762979232/
- * @param {number[]} prices
+ * Runtime: 76 ms
+ * Memory Usage: 44.1 MB
+ * Link: https://leetcode.com/problems/longest-palindrome/submissions/825338916/
+ //-----------------------------------------------------------------------------
+ 1. Defines the hash set.
+ 2. Define the counter
+ 3. Loop over the char array
+ 4.    If hashSet doesn't contains the char, add it to it
+ 5.    Else hashSet contains the record, remove it and increment counter by 2 as it is second same char
+ 6. If the length of of string is even and the counter cover the whole string, return counter
+ 7. Return counter + 1. (1 is additional single char that we can put in the middle)
+ //-----------------------------------------------------------------------------
+ /*
+ * @param {string} s
  * @return {number}
  */
-var maxProfit = function (prices) {
+var longestPalindrome = function(s) {
 
-    // 1. Set the min pointer as max
-    let min = Number.MAX_VALUE;
+    // 1. Defines the hash set.
+    let set = new Set();
 
-    // 2. Set the max pointer as min
-    let maxProfit = Number.MIN_VALUE;
+    // 2. Define the counter
+    let counter = 0;
 
-    // 3. Loop over all prices
-    for (let p of prices) {
+    // 3. Loop over the char array
+    for(let c of s){
 
-        // 4. Try to find a new min
-        min = Math.min(min, p);
-
-        // 5. Try to find a new max profit.
-        maxProfit = Math.max(maxProfit, p - min);
+        // 4. If hashSet doesn't contains the char, add it to it
+        if(!set.has(c)) {
+            set.add(c);
+        }
+        // 5. Else hashSet contains the record, remove it and increment counter by 2 as it is second same char
+        else {
+            counter += 2;
+            set.delete(c);
+        }
     }
 
-    // 6. Return max profit.
-    return maxProfit;
-};
+    // 6. If the length of of string is even and the counter cover the whole string, return counter
+    if(s.length % 2 == 0 && s.length <= counter  ){
+        return counter;
+    }
 
+    // 7. Return counter + 1. (1 is additional single char that we can put in the middle)
+    return counter + 1
+};
