@@ -1,7 +1,7 @@
 /**
- * Runtime: 84 ms
- * Memory Usage: 42.1 MB
- * Link: https://leetcode.com/problems/fibonacci-number/submissions/827176083/
+ * Runtime: 59 ms
+ * Memory Usage: 41.5 MB
+ * Link: https://leetcode.com/problems/climbing-stairs/submissions/827181527/
  //-----------------------------------------------------------------------------
  1. If Stairs not so many return constant
  2. Set last step, before last step and result.
