@@ -1,36 +1,39 @@
 /**
- * Runtime: 77  ms
- * Memory Usage: 43.3 MB
- * Link: https://leetcode.com/problems/two-sum/submissions/829586884
+ * Runtime: 80  ms
+ * Memory Usage: 42.6 MB
+ * Link: https://leetcode.com/submissions/detail/757846937/
  * //-----------------------------------------------------------------------------
  *    1. Set the hash map
  *    2. Loop over the nums
  *    3. Get the target minus the current
  *    4.    If such record is found in hashmap return the current index and the found one
  *    5.    Add the current element to the map.
+ *    6. Return null;
  * //-----------------------------------------------------------------------------
- /*
+ /**
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+function twoSum(nums: number[], target: number): number[] {
 
-    // 1. Define the hash map
-    var hashMap = new Map();
+    // 1. Set the hash map
+    const map = new Map<number, number>();
 
     // 2. Loop over the nums
-    for(let i = 0; i <nums.length; i++){
+    for(let i = 0; i < nums.length; i++) {
 
         // 3. Get the target minus the current
-        let val = target - nums[i];
+        let remain = target - nums[i];
 
         // 4. If such record is found in hashmap return the current index and the found one
-        if(hashMap.has(val)){
-            return [i, hashMap.get(val)];
+        if(map.has(remain)) {
+            return [map.get(nums[i])!, i];
         }
 
         // 5. Add the current element to the map.
-        hashMap.set(nums[i], i);
+        map.set(nums[i], i);
     }
-};
+
+    return [];
+}

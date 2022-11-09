@@ -40,7 +40,7 @@ var merge = function (nums1, m, nums2, n) {
             // 6. Set to the latest index of array the biggest possible element
             nums1[m + n - 1] = nums2[n - 1];
 
-            // 7. Decrese the indexer m as the element was used from the list and not avaliable anymore
+            // 7. Decrese the indexer n as the element was used from the list and not avaliable anymore
             n--;
         }
     }

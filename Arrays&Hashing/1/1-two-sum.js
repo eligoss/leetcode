@@ -16,7 +16,7 @@
  */
 var twoSum = function(nums, target) {
 
-    // 1. Define the hash map
+    // 1. Set the hash map
     var hashMap = new Map();
 
     // 2. Loop over the nums
