@@ -1,13 +1,13 @@
 /**
- * Runtime: 163 ms
+ * Runtime: 161 ms
  * Memory Usage: 46 MB
- * Link: https://leetcode.com/problems/top-k-frequent-elements/submissions/848483036/
+ * Link: https://leetcode.com/problems/top-k-frequent-elements/submissions/848994710/
  * //-----------------------------------------------------------------------------
  *    1. Define counters hash map, where key is number and value is count and element
  *    2. Loop over the nums and init the hash map with elements and counters
- *    3. Sort the array by frequency in descending order
- *    4. Set hash map of counter with values
- *    5. Set frequencies with actual numbers 
+ *    3. Convert hashmap to array of values
+ *    4. Sort the array by frequency in descending order
+ *    5. Loop the frequencies array and add items to result list until enought
  *    6. Return result.
  * //-----------------------------------------------------------------------------
 */

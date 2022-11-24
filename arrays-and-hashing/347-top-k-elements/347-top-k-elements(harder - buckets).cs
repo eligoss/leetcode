@@ -1,7 +1,7 @@
 /**
- * Runtime: 231 ms
- * Memory Usage: 49.1 MB
- * Link: https://leetcode.com/problems/top-k-frequent-elements/submissions/848469980/
+ * Runtime: 165 ms
+ * Memory Usage: 50.7 MB
+ * Link: https://leetcode.com/problems/top-k-frequent-elements/submissions/848990374/
  * //-----------------------------------------------------------------------------
  *    1. Define counters hash map, where key is number and value is count
  *    2. Define frequencies map with key as counter and array of numbers
@@ -13,7 +13,6 @@
 */
 public class Solution {
     public int[] TopKFrequent(int[] nums, int k) {
-
         // 1. Define counters hash map, where key is number and value is count
         var counters = new Dictionary<int, int>();
         
@@ -21,41 +20,41 @@ public class Solution {
         var frequencies = new Dictionary<int, List<int>>();
 
         // 3. Fill the frequencies with all possible counters from 1 to nums.length
-        for (int i = 1; i <= nums.Length; i++)
-        {
-            frequencies.Add(i, new List<int>());
-        }
-        
-        // 4. Set hash map of counter with values
+        int counter = 1;
         foreach (var item in nums)
         {
-            counters.TryGetValue(item, out int counter);
-            counters[item] = counter + 1;
+            counters.TryGetValue(item, out int count);
+            counters[item] = count + 1;
+            
+            // 4. Set hash map of counter with values
+            frequencies.Add(counter, new List<int>());
+            counter++;
         }
         
         // 5. Set frequencies with actual numbers 
+        var maxCounter = 0;
         foreach (var item in counters)
         {
             frequencies[item.Value].Add(item.Key);
+            maxCounter = Math.Max(maxCounter, item.Value);
         }
 
         // 6. Loop over frequencies from the end to take appropriate amount of records.
-        var result = new List<int>();
-        for (int i = nums.Length; i > 0; i--)
+        var result = new int[k];
+        var foundResults = 0;
+        for (var i = maxCounter; i > 0 && foundResults < k; i--)
         {
-            if (frequencies.TryGetValue(i, out List<int> records))
+            foreach (var record in frequencies.GetValueOrDefault(i)!)
             {
-                foreach (var record in records)
+                result[foundResults++] = record;
+                
+                if (foundResults == k)
                 {
-                    result.Add(record);
-                    if (result.Count == k)
-                    {
-                        return result.ToArray();
-                    }
+                    break;
                 }
             }
         }
 
-        return null;
+        return result;
     }
 }
